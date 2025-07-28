@@ -2,8 +2,10 @@ package com.cloudstuff.tictactoe.fragment;
 
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,6 +22,12 @@ import com.cloudstuff.tictactoe.annotation.InAppType;
 import com.cloudstuff.tictactoe.model.CommonConfiguration;
 import com.cloudstuff.tictactoe.utils.CommonUtils;
 import com.cloudstuff.tictactoe.utils.Constants;
+import com.trackier.sdk.TrackierSDK;
+import com.trackier.sdk.TrackierEvent;
+import com.trackier.sdk.dynamic_link.DynamicLink;
+
+import java.util.HashMap;
+import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -48,6 +56,8 @@ public class SettingsFragment extends BaseFragment implements SwitchCompat.OnChe
     MaterialTextView tvRate;
     @BindView(R.id.tv_feedback)
     MaterialTextView tvFeedback;
+    @BindView(R.id.tv_invite)
+    MaterialTextView tvInvite;
     @BindView(R.id.tv_terms_condition)
     MaterialTextView tvTermsCondition;
     @BindView(R.id.tv_privacy_policy)
@@ -134,7 +144,7 @@ public class SettingsFragment extends BaseFragment implements SwitchCompat.OnChe
     //endregion
 
     //region #On Click Method
-    @OnClick({R.id.iv_back, R.id.tv_rate, R.id.tv_feedback, R.id.tv_share, R.id.tv_terms_condition,
+    @OnClick({R.id.iv_back, R.id.tv_rate, R.id.tv_feedback, R.id.tv_share, R.id.tv_invite, R.id.tv_terms_condition,
             R.id.tv_privacy_policy, R.id.tv_remove_ads, R.id.tv_more_apps})
     public void onViewClicked(View view) {
         if (CommonUtils.isClickDisabled()) {
@@ -162,6 +172,11 @@ public class SettingsFragment extends BaseFragment implements SwitchCompat.OnChe
             //Share
             case R.id.tv_share:
                 shareApp();
+                break;
+
+            //Invite
+            case R.id.tv_invite:
+                inviteFriends();
                 break;
 
             //Terms Condition
@@ -244,6 +259,7 @@ public class SettingsFragment extends BaseFragment implements SwitchCompat.OnChe
         tvShare.setSelected(true);
         tvRate.setSelected(true);
         tvFeedback.setSelected(true);
+        tvInvite.setSelected(true);
         tvTermsCondition.setSelected(true);
         tvPrivacyPolicy.setSelected(true);
         tvMoreApps.setSelected(true);
@@ -351,6 +367,88 @@ public class SettingsFragment extends BaseFragment implements SwitchCompat.OnChe
     public void hideRemoveAdButton() {
         viewRemoveAds.setVisibility(View.GONE);
         tvRemoveAds.setVisibility(View.GONE);
+    }
+
+    /**
+     * Invite friends using dynamic link
+     */
+    private void inviteFriends() {
+        if (networkUtils.isConnected()) {
+            createDynamicLink(mainActivity);
+        } else {
+            showError(getString(R.string.error_internet_connection));
+        }
+    }
+
+    /**
+     * Create dynamic link for inviting friends
+     */
+    private void createDynamicLink(Context context) {
+        // Build the dynamic link parameters
+        Map<String, String> sdkParams = new HashMap<>();
+        sdkParams.put("param1", "value1");
+        sdkParams.put("param2", "value2");
+
+        DynamicLink dynamicLink = new DynamicLink.Builder()
+                .setTemplateId("78R2J2") // Set the template ID for the link
+                .setLink(Uri.parse("https://trackier58.u9ilnk.me")) // The base link
+                .setDomainUriPrefix("trackier58.u9ilnk.me") // Domain prefix for the link
+                .setDeepLinkValue("NewMainActivity") // Deep link destination within the app
+                // Additional SDK parameters
+                .setSDKParameters(sdkParams)
+                // Attribution parameters for tracking
+                .setAttributionParameters(
+                        "my_channel",
+                        "my_campaign",
+                        "at_invite",
+                        "param1_value",
+                        "param2_value",
+                        "param3_value",
+                        "param4_value",
+                        "param5_value"
+                )
+                .build();
+
+        // Call the SDK to create the dynamic link
+        TrackierSDK.createDynamicLink(
+                dynamicLink,
+                dynamicLinkUrl -> {
+                    // Log success messages
+                    Log.d("DynamicLinkSuccess", "Dynamic link created: " + dynamicLinkUrl);
+                    
+                    // Track the invite event
+                    TrackierEvent event = new TrackierEvent(TrackierEvent.INVITE);
+                    event.param1 = "Settings Screen";
+                    event.param2 = "Invite Button Clicked";
+                    TrackierSDK.trackEvent(event);
+                    
+                    // Share the dynamic link
+                    shareDynamicLink(dynamicLinkUrl);
+                    return null;
+                },
+                errorMessage -> {
+                    // Log error messages
+                    Log.d("DynamicLinkError", errorMessage);
+                    showError("Failed to create invite link. Please try again.");
+                    return null;
+                }
+        );
+    }
+
+    /**
+     * Share the dynamic link
+     */
+    private void shareDynamicLink(String dynamicLinkUrl) {
+        try {
+            Intent shareIntent = new Intent(Intent.ACTION_SEND);
+            shareIntent.setType("text/plain");
+            shareIntent.putExtra(Intent.EXTRA_SUBJECT, "Invite to Tic Tac Toe");
+            shareIntent.putExtra(Intent.EXTRA_TEXT, "Hey! Check out this awesome Tic Tac Toe game: " + dynamicLinkUrl);
+            startActivity(Intent.createChooser(shareIntent, "Share via"));
+        } catch (Exception e) {
+            Log.e("ShareError", "Error sharing dynamic link: " + e.getMessage());
+            showError("Failed to share invite link.");
+        }
     }
     //endregion
 }

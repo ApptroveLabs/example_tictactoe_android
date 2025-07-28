@@ -177,6 +177,21 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/feedback" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/default_dp_1"
+                    android:layout_marginTop="@dimen/setting_view_margin"
+                    android:layout_marginBottom="@dimen/setting_view_margin"
+                    android:background="@color/setting_view_color" />
+
+                <!--Invite-->
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_invite"
+                    style="@style/SettingsTextTheme"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/invite" />
             </LinearLayout>
 
             <LinearLayout

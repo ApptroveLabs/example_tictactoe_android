@@ -143,7 +143,7 @@ public class PlayerListFragment extends BaseFragment implements OnInvitationSent
 
     @Override
     public void onInvitationSent(GamePlayer gamePlayer) {
-        Objects.requireNonNull(getActivity()).runOnUiThread(new Runnable() {
+        requireActivity().runOnUiThread(new Runnable() {
             @Override
             public void run() {
                 Toast.makeText(getActivity(), "Invitation sent successfully.", Toast.LENGTH_SHORT).show();

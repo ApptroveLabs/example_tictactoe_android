@@ -1,10 +1,13 @@
 package com.cloudstuff.tictactoe;
 
 import android.app.Application;
+import android.content.Intent;
 import android.util.Log;
 
+import androidx.annotation.NonNull;
 import androidx.lifecycle.ProcessLifecycleOwner;
 
+import com.cloudstuff.tictactoe.activity.MainActivity;
 import com.cloudstuff.tictactoe.dagger.DaggerAppComponent;
 import com.facebook.FacebookSdk;
 import com.facebook.appevents.AppEventsLogger;
@@ -17,6 +20,9 @@ import com.cloudstuff.tictactoe.utils.Constants;
 import com.cloudstuff.tictactoe.utils.CrashReportingTree;
 import com.cloudstuff.tictactoe.utils.PreferenceUtils;
 import com.google.firebase.analytics.FirebaseAnalytics;
+import com.trackier.sdk.DeepLink;
+import com.trackier.sdk.DeepLinkListener;
+import com.trackier.sdk.TrackierEvent;
 import com.trackier.sdk.TrackierSDK;
 import com.trackier.sdk.TrackierSDKConfig;
 import java.util.ArrayList;
@@ -26,6 +32,33 @@ import java.util.Objects;
 import timber.log.Timber;
 
 public class TicTacToe extends Application {
+
+    DeepLinkListener deepLinkListener = new DeepLinkListener() {
+        public void onDeepLinking(@NonNull DeepLink deepLink) {
+            Log.d("DeepLink", "=== Deep Link Received ===");
+            Log.d("DeepLink", "Deep Link Value: " + deepLink.getDeepLinkValue());
+            Log.d("DeepLink", "URL: " + deepLink.getUrl());
+            Log.d("DeepLink", "Is Deferred: " + deepLink.isDeferred());
+            Log.d("DeepLink", "Partner ID: " + deepLink.getPartnerId());
+            Log.d("DeepLink", "Site ID: " + deepLink.getSiteId());
+            Log.d("DeepLink", "Sub Site ID: " + deepLink.getSubSiteId());
+            Log.d("DeepLink", "Campaign: " + deepLink.getCampaign());
+            Log.d("DeepLink", "P1: " + deepLink.getP1());
+            Log.d("DeepLink", "P2: " + deepLink.getP2());
+            Log.d("DeepLink", "P3: " + deepLink.getP3());
+            Log.d("DeepLink", "P4: " + deepLink.getP4());
+            Log.d("DeepLink", "P5: " + deepLink.getP5());
+            Log.d("DeepLink", "All Data: " + deepLink.getData());
+            
+            if (deepLink.getSdkParams() != null) {
+                Log.d("DeepLink", "SDK Params: " + deepLink.getSdkParams());
+            }
+            
+            Log.d("DeepLink", "=== End Deep Link Info ===");
+        }
+    };
+
+
 
     //region #Variables
     private static TicTacToe ticTacToeInstance;
@@ -73,6 +106,7 @@ public class TicTacToe extends Application {
         PreferenceUtils preferenceUtils = getInstance().getAppComponent().providePreferenceUtils();
 
         TrackierSDKConfig  sdkConfig = new TrackierSDKConfig(this, TR_DEV_KEY, "development");
+        sdkConfig.setDeepLinkListener(deepLinkListener);
         TrackierSDK.initialize(sdkConfig);
 
 
