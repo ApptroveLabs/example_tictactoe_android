@@ -38,7 +38,7 @@ TrackierSDK.initialize(sdkConfig);
 
 ```java
 TrackierEvent event = new TrackierEvent("sEMWSCTXeu");
-event.param1 = "App Opened";
+event.param1 = "Param1";
 TrackierSDK.trackEvent(event);
 ```
 
