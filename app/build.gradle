@@ -53,10 +53,6 @@ android {
                 dirs 'libs'
             }
         }
-
-        dexOptions {
-            javaMaxHeapSize "4g"
-        }
     }
 
     compileOptions {
@@ -93,10 +89,6 @@ android {
             signingConfig signingConfigs.debug
         }
 
-        lintOptions {
-            checkReleaseBuilds false
-        }
-
         debug {
             minifyEnabled false
             shrinkResources false
@@ -111,6 +103,10 @@ android {
 
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
     }
 }
 
@@ -191,7 +187,7 @@ dependencies {
 
     implementation "android.arch.lifecycle:extensions:${archLifecycleVersion}"
 
-    implementation 'com.trackier:android-sdk:1.6.60'
+    implementation 'com.trackier:android-sdk:1.6.73'
 
     implementation 'com.android.installreferrer:installreferrer:2.2'
 

@@ -218,6 +218,19 @@ public class MainActivity extends BaseActivity {
         mFirebaseAnalytics.setUserProperty("ct_objectId", Objects.requireNonNull(TrackierSDK.getTrackierId()));
         Log.d("TAG", "onCreate: "+TrackierSDK.getTrackierId());
 
+
+        // Resolve and print the deferred deep link URL
+        TrackierSDK.resolveDeeplinkUrl("https://trackier58.u9ilnk.me/d/NKmWH9E7b1", 
+            resultUrl -> {
+                Log.d("TrackierSDK", "Resolved Deferred Deep Link URL: " + resultUrl);
+                return null;
+            },
+            error -> {
+                Log.e("TrackierSDK", "Error resolving deferred deep link: " + error.getMessage());
+                return null;
+            }
+        );
+
         // Log an app event
         AppEventsLogger logger = AppEventsLogger.newLogger(this);
         // Initialize the Facebook logger

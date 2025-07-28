@@ -2,8 +2,8 @@
 
     <string name="app_name">Tic Tac Toe</string>
 
-    <string name="FbAppId">940420857688811</string>
-    <string name="facebook_client_token">4e5ebf1c40703f2f73a0b225234ba12f</string>
+    <string name="FbAppId">yourid</string>
+    <string name="facebook_client_token">Yourkeys</string>
 
     <string name="action_ai">AI</string>
     <string name="action_friends">Friends</string>
@@ -44,6 +44,7 @@
     <string name="message_share_app">Hey, I have found an awesome Game.\nPlay with AI or friends.\n %s</string>
     <string name="feedback">Feedback</string>
     <string name="app_feedback">App Feedback</string>
+    <string name="invite">Invite Friends</string>
     <string name="rate">Rate</string>
     <string name="share">Share</string>
     <string name="terms_conditions">Terms Conditions</string>
@@ -75,7 +76,7 @@
     <string name="error_in_app_user_cancel">Either you cancelled the request or In-App purchase reported a transaction error.</string>
     <string name="action_watch">Watch</string>
     <string name="title_advertise">Advertise</string>
-    <string name="message_unlock_theme_advertise_days">Watch video advertise to unlock %s theme for %d days.</string>
+    <string name="message_unlock_theme_advertise_days">Watch video advertise to unlock %1$s theme for %2$d days.</string>
     <string name="message_unlock_theme_advertise">Watch video advertise to unlock %s theme.</string>
     <string name="title_purchase">Purchase</string>
     <string name="title_purchase_theme">Purchase Theme</string>

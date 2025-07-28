@@ -11,8 +11,8 @@ Release:
 
 -----------------------------------------------
 
-ADMOB Test ID:
-Ad App ID: ca-app-pub-3940256099942544~3347511713
-Banner AD ID: ca-app-pub-3940256099942544/6300978111
-Interstitial Ad ID: ca-app-pub-3940256099942544/1033173712
-Reward Ad ID: ca-app-pub-3940256099942544/5224354917
+ADMOB Test ID: xxxxxx
+Ad App ID: xxxxxxx 
+Banner AD ID: xxxxxxxxxx
+Interstitial Ad ID: xxxxxxxxxxx
+Reward Ad ID: xxxxxxxxx

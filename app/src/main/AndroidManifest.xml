@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.cloudstuff.tictactoe"
-    android:installLocation="auto"
-    tools:node="replace">
+    android:installLocation="auto">
 
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="com.android.vending.BILLING" />
@@ -19,7 +17,8 @@
         android:resizeableActivity="false"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="false"
-        android:theme="@style/LauncherTheme">
+        android:theme="@style/LauncherTheme"
+        tools:replace="android:supportsRtl">
 
         <!--Splash Activity-->
         <activity
@@ -42,7 +41,7 @@
             <meta-data android:name="com.facebook.sdk.ApplicationId"
                 android:value="@string/FbAppId" />
 
-            <meta-datas
+            <meta-data
                 android:name="com.facebook.sdk.ClientToken"
                 android:value="@string/facebook_client_token" />
             <meta-data
