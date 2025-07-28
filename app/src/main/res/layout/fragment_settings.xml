@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:background="@drawable/page_background"
+    android:orientation="vertical">
+
+    <!--Toolbar-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/toolbar_height">
+
+        <!--Back-->
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_back"
+            android:layout_width="?attr/actionBarSize"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_centerVertical="true"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:padding="@dimen/default_icon_with_padding"
+            android:src="@drawable/ic_back" />
+
+        <!--Title-->
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_title"
+            style="@style/ToolbarTitleTheme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/title_settings" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/default_layout_margin_padding">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/setting_box_background"
+                android:orientation="vertical"
+                android:padding="@dimen/default_layout_margin_padding">
+
+                <!--Audio-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_audio"
+                        style="@style/SettingsTextTheme"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/audio" />
+
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/sc_audio"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/default_layout_margin_padding"
+                        android:theme="@style/SwitchTheme" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/default_dp_1"
+                    android:layout_marginTop="@dimen/setting_view_margin"
+                    android:layout_marginBottom="@dimen/setting_view_margin"
+                    android:background="@color/setting_view_color" />
+
+                <!--Vibration-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_vibration"
+                        style="@style/SettingsTextTheme"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/vibration" />
+
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/sc_vibration"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/default_layout_margin_padding"
+                        android:theme="@style/SwitchTheme" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/default_dp_1"
+                    android:layout_marginTop="@dimen/setting_view_margin"
+                    android:layout_marginBottom="@dimen/setting_view_margin"
+                    android:background="@color/setting_view_color" />
+
+                <!--Notification-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_notification"
+                        style="@style/SettingsTextTheme"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/notification" />
+
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/sc_notification"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/default_layout_margin_padding"
+                        android:theme="@style/SwitchTheme" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/default_layout_margin_padding"
+                android:background="@drawable/setting_box_background"
+                android:orientation="vertical"
+                android:padding="@dimen/default_layout_margin_padding">
+
+                <!--Share-->
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_share"
+                    style="@style/SettingsTextTheme"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/share" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/default_dp_1"
+                    android:layout_marginTop="@dimen/setting_view_margin"
+                    android:layout_marginBottom="@dimen/setting_view_margin"
+                    android:background="@color/setting_view_color" />
+
+                <!--Rate-->
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_rate"
+                    style="@style/SettingsTextTheme"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rate" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/default_dp_1"
+                    android:layout_marginTop="@dimen/setting_view_margin"
+                    android:layout_marginBottom="@dimen/setting_view_margin"
+                    android:background="@color/setting_view_color" />
+
+                <!--Feedback-->
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_feedback"
+                    style="@style/SettingsTextTheme"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/feedback" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/default_layout_margin_padding"
+                android:background="@drawable/setting_box_background"
+                android:orientation="vertical"
+                android:padding="@dimen/default_layout_margin_padding">
+                <!--Terms Condition-->
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_terms_condition"
+                    style="@style/SettingsTextTheme"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/terms_conditions" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/default_dp_1"
+                    android:layout_marginTop="@dimen/setting_view_margin"
+                    android:layout_marginBottom="@dimen/setting_view_margin"
+                    android:background="@color/setting_view_color" />
+
+                <!--Privacy Policy-->
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_privacy_policy"
+                    style="@style/SettingsTextTheme"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/privacy_policy" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/default_layout_margin_padding"
+                android:background="@drawable/setting_box_background"
+                android:orientation="vertical"
+                android:padding="@dimen/default_layout_margin_padding">
+
+                <!--More Apps-->
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_more_apps"
+                    style="@style/SettingsTextTheme"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/more_apps" />
+
+                <View
+                    android:id="@+id/view_remove_ads"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/default_dp_1"
+                    android:layout_marginTop="@dimen/setting_view_margin"
+                    android:layout_marginBottom="@dimen/setting_view_margin"
+                    android:background="@color/setting_view_color" />
+
+                <!--Remove Ads-->
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_remove_ads"
+                    style="@style/SettingsTextTheme"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/remove_ads" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:animateLayoutChanges="true"
+    android:background="@drawable/popup_background"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="@dimen/default_layout_margin_padding">
+
+    <!--Easy-->
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_easy"
+        style="@style/ButtonTheme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/selector_large_green_button"
+        android:text="@string/action_easy" />
+
+    <!--Medium-->
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_medium"
+        style="@style/ButtonTheme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/default_layout_margin_padding"
+        android:background="@drawable/selector_large_yellow_button"
+        android:text="@string/action_medium" />
+
+    <!--Hard-->
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_hard"
+        style="@style/ButtonTheme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/default_layout_margin_padding"
+        android:background="@drawable/selector_large_red_button"
+        android:text="@string/action_hard" />
+
+    <!--Expert-->
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_expert"
+        style="@style/ButtonTheme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/default_layout_margin_padding"
+        android:background="@drawable/selector_large_blue_button"
+        android:text="@string/action_expert" />
+</LinearLayout>

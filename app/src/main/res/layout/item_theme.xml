@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ll_theme"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/default_layout_margin_padding"
+    android:animateLayoutChanges="true"
+    android:background="@drawable/theme_box_background"
+    android:gravity="center"
+    android:orientation="horizontal"
+    android:padding="@dimen/default_layout_margin_padding">
+
+    <!--Theme Cross-->
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_theme_cross"
+        android:layout_width="@dimen/theme_icon_size"
+        android:layout_height="@dimen/theme_icon_size"
+        tools:src="@drawable/theme_classic_cross" />
+
+    <!--Theme Circle-->
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_theme_circle"
+        android:layout_width="@dimen/theme_icon_size"
+        android:layout_height="@dimen/theme_icon_size"
+        android:layout_marginStart="@dimen/default_icon_with_padding"
+        tools:src="@drawable/theme_circle" />
+
+    <!--Theme Name-->
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_theme_name"
+        style="@style/SettingsTextTheme"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/default_layout_margin_padding"
+        android:layout_weight="1"
+        android:gravity="center_vertical"
+        android:textColor="@color/theme_name_text_color"
+        tools:text="Theme" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/default_layout_margin_padding"
+        android:gravity="center"
+        android:orientation="vertical">
+        <!--Theme Type-->
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_theme_type"
+            android:layout_width="@dimen/icon_size"
+            android:layout_height="@dimen/icon_size"
+            tools:src="@drawable/ic_dollar" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_unlock_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="marquee"
+            android:fontFamily="@font/nunito_black"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:singleLine="true"
+            android:text="@string/title_advertise"
+            android:textColor="@color/theme_unlock_type_text_color"
+            android:textSize="@dimen/unlock_type_text_size" />
+    </LinearLayout>
+</LinearLayout>

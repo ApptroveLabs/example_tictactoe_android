@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:background="@drawable/page_background"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <!--App Icon-->
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="@dimen/home_page_icon_size"
+        android:layout_height="@dimen/home_page_icon_size"
+        android:src="@drawable/ic_splash_logo" />
+
+    <!--AI-->
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_ai"
+        style="@style/ButtonTheme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/home_page_margin_padding"
+        android:background="@drawable/selector_small_blue_button"
+        android:text="@string/action_ai" />
+
+    <!--Friends-->
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_friends"
+        style="@style/ButtonTheme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/home_page_margin_padding"
+        android:background="@drawable/selector_small_yellow_button"
+        android:text="@string/action_friends" />
+
+    <!--Online-->
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_online"
+        style="@style/ButtonTheme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/home_page_margin_padding"
+        android:background="@drawable/selector_small_yellow_button"
+        android:ellipsize="marquee"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:singleLine="true"
+        android:text="@string/action_online"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/home_page_margin_padding"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="@dimen/default_dp_1"
+            android:layout_weight="1" />
+
+        <!--Achievement-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_achievement"
+            android:layout_width="@dimen/home_page_button_height_width"
+            android:layout_height="@dimen/home_page_button_height_width"
+            android:background="@drawable/selector_achievement_button" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="@dimen/default_dp_1"
+            android:layout_weight="1" />
+
+        <!--Leaderboard-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_leaderboard"
+            android:layout_width="@dimen/home_page_button_height_width"
+            android:layout_height="@dimen/home_page_button_height_width"
+            android:background="@drawable/selector_leaderboard_button" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="@dimen/default_dp_1"
+            android:layout_weight="1" />
+
+        <!--Themes-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_themes"
+            android:layout_width="@dimen/home_page_button_height_width"
+            android:layout_height="@dimen/home_page_button_height_width"
+            android:background="@drawable/selector_theme_button" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="@dimen/default_dp_1"
+            android:layout_weight="1" />
+
+        <!--History-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_history"
+            android:layout_width="@dimen/home_page_button_height_width"
+            android:layout_height="@dimen/home_page_button_height_width"
+            android:background="@drawable/selector_history_button" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="@dimen/default_dp_1"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_30sdp"
+        android:layout_marginEnd="@dimen/_30sdp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="@dimen/default_dp_1"
+            android:layout_weight="1" />
+
+        <!--How To Play-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_how_to_play"
+            android:layout_width="@dimen/home_page_button_height_width"
+            android:layout_height="@dimen/home_page_button_height_width"
+            android:background="@drawable/selector_how_to_play_button" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="@dimen/default_dp_1"
+            android:layout_weight="1" />
+
+        <!--Settings-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_settings"
+            android:layout_width="@dimen/home_page_button_height_width"
+            android:layout_height="@dimen/home_page_button_height_width"
+            android:background="@drawable/selector_settings_button" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="@dimen/default_dp_1"
+            android:layout_weight="1" />
+
+        <!--Exit-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_exit"
+            android:layout_width="@dimen/home_page_button_height_width"
+            android:layout_height="@dimen/home_page_button_height_width"
+            android:background="@drawable/selector_exit_button" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="@dimen/default_dp_1"
+            android:layout_weight="1" />
+    </LinearLayout>
+</LinearLayout>

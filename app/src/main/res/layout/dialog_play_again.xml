@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:animateLayoutChanges="true"
+    android:background="@drawable/popup_background"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="@dimen/default_layout_margin_padding">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_player_one_status"
+                android:layout_width="@dimen/popup_play_again_icon_size"
+                android:layout_height="@dimen/popup_play_again_icon_size"
+                android:layout_gravity="center"
+                tools:src="@drawable/ic_win" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_player_name_one"
+                style="@style/DialogMessageStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:ellipsize="marquee"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:singleLine="true"
+                tools:text="Player One" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_player_score_one"
+                style="@style/DialogMessageStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="0" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="@dimen/_2sdp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:background="@color/popup_border_color" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_player_two_status"
+                android:layout_width="@dimen/popup_play_again_icon_size"
+                android:layout_height="@dimen/popup_play_again_icon_size"
+                android:layout_gravity="center"
+                tools:src="@drawable/ic_lost" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_player_name_two"
+                style="@style/DialogMessageStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:ellipsize="marquee"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:singleLine="true"
+                tools:text="Player Two" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_player_score_two"
+                style="@style/DialogMessageStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="0" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/default_layout_margin_padding"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <!--Play Again-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_play_again"
+            style="@style/ButtonTheme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/selector_large_green_button"
+            android:text="@string/action_play_again" />
+
+        <!--Home-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_home"
+            style="@style/ButtonTheme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/default_layout_margin_padding"
+            android:background="@drawable/selector_large_red_button"
+            android:text="@string/action_home" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Google Play game services IDs. Save this file as res/values/games-ids.xml in your project.-->
+<resources>
+    <!--app_id-->
+    <string name="app_id" translatable="false">991343373735</string>
+    <!--package_name-->
+    <string name="package_name" translatable="false">com.progressio.tictactoe</string>
+    <!--achievement Play Friends - 25-->
+    <string name="achievement_play_friends__25" translatable="false">CgkIp9uthe0cEAIQAg</string>
+    <!--achievement Play Friends - 50-->
+    <string name="achievement_play_friends__50" translatable="false">CgkIp9uthe0cEAIQAw</string>
+    <!--achievement Play Friends - 100-->
+    <string name="achievement_play_friends__100" translatable="false">CgkIp9uthe0cEAIQBA</string>
+    <!--achievement Play Friends - 250-->
+    <string name="achievement_play_friends__250" translatable="false">CgkIp9uthe0cEAIQBQ</string>
+    <!--achievement Play Friends - 500-->
+    <string name="achievement_play_friends__500" translatable="false">CgkIp9uthe0cEAIQBg</string>
+    <!--achievement Play AI - 25-->
+    <string name="achievement_play_ai__25" translatable="false">CgkIp9uthe0cEAIQBw</string>
+    <!--achievement Play AI - 50-->
+    <string name="achievement_play_ai__50" translatable="false">CgkIp9uthe0cEAIQCA</string>
+    <!--achievement Play AI - 100-->
+    <string name="achievement_play_ai__100" translatable="false">CgkIp9uthe0cEAIQCQ</string>
+    <!--achievement Play AI - 250-->
+    <string name="achievement_play_ai__250" translatable="false">CgkIp9uthe0cEAIQCg</string>
+    <!--achievement Play AI - 500-->
+    <string name="achievement_play_ai__500" translatable="false">CgkIp9uthe0cEAIQCw</string>
+    <!--achievement Defeat AI - 25-->
+    <string name="achievement_defeat_ai__25" translatable="false">CgkIp9uthe0cEAIQEw</string>
+    <!--achievement Defeat AI - 50-->
+    <string name="achievement_defeat_ai__50" translatable="false">CgkIp9uthe0cEAIQFA</string>
+    <!--achievement Defeat AI - 100-->
+    <string name="achievement_defeat_ai__100" translatable="false">CgkIp9uthe0cEAIQFQ</string>
+    <!--achievement Defeat AI - 250-->
+    <string name="achievement_defeat_ai__250" translatable="false">CgkIp9uthe0cEAIQFg</string>
+    <!--achievement Defeat AI - 500-->
+    <string name="achievement_defeat_ai__500" translatable="false">CgkIp9uthe0cEAIQFw</string>
+    <!--leaderboard Defeat AI-->
+    <string name="leaderboard_defeat_ai" translatable="false">CgkIp9uthe0cEAIQAQ</string>
+</resources>

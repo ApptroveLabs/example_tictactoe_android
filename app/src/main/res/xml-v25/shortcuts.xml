@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--AI-->
+    <shortcut
+        android:enabled="true"
+        android:icon="@mipmap/ic_launcher"
+        android:shortcutDisabledMessage="@string/static_shortcut_play_with_ai_disabled_message"
+        android:shortcutId="ai"
+        android:shortcutLongLabel="@string/static_shortcut_long_play_with_ai_label"
+        android:shortcutShortLabel="@string/static_shortcut_short_play_with_ai_label">
+
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetClass="com.cloudstuff.tictactoe.activity.MainActivity"
+            android:targetPackage="com.cloudstuff.tictactoe">
+            <extra
+                android:name="GAME_MODE"
+                android:value="AI" />
+        </intent>
+    </shortcut>
+
+    <!--Friends-->
+    <shortcut
+        android:enabled="true"
+        android:icon="@mipmap/ic_launcher"
+        android:shortcutDisabledMessage="@string/static_shortcut_play_with_friend_disabled_message"
+        android:shortcutId="friends"
+        android:shortcutLongLabel="@string/static_shortcut_long_play_with_friends_label"
+        android:shortcutShortLabel="@string/static_shortcut_short_play_with_friends_label">
+
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetClass="com.cloudstuff.tictactoe.activity.MainActivity"
+            android:targetPackage="com.cloudstuff.tictactoe">
+            <extra
+                android:name="GAME_MODE"
+                android:value="FRIEND" />
+        </intent>
+    </shortcut>
+</shortcuts>

@@ -1,0 +1,53 @@
+<resources>
+
+    <dimen name="default_layout_margin_padding">@dimen/_13sdp</dimen>
+    <dimen name="default_dp_1">@dimen/_1sdp</dimen>
+    <dimen name="default_icon_with_padding">@dimen/_8sdp</dimen>
+
+    <dimen name="admob_banner_ad_margin_top">@dimen/_5sdp</dimen>
+
+    <dimen name="toolbar_title_text_size">@dimen/_24ssp</dimen>
+    <dimen name="toolbar_height">@dimen/_55sdp</dimen>
+    <dimen name="toolbar_height_game">@dimen/_100sdp</dimen>
+
+    <dimen name="popup_border">@dimen/_3sdp</dimen>
+    <dimen name="popup_corner_radius">@dimen/_10sdp</dimen>
+    <dimen name="popup_title_text_size">@dimen/_24ssp</dimen>
+    <dimen name="popup_message_text_size">@dimen/_20ssp</dimen>
+    <dimen name="popup_play_again_icon_size">@dimen/_50sdp</dimen>
+
+    <dimen name="player_name_text_size">@dimen/_16ssp</dimen>
+    <dimen name="player_score_text_size">@dimen/_24ssp</dimen>
+    <dimen name="player_title_text_size">@dimen/_20ssp</dimen>
+    <dimen name="player_content_text_size">@dimen/_20ssp</dimen>
+    <dimen name="theme_player_icon_size">@dimen/_75sdp</dimen>
+
+    <dimen name="game_board_box_padding">@dimen/_15sdp</dimen>
+    <dimen name="board_line_stroke">@dimen/_5sdp</dimen>
+    <dimen name="board_height_width">@dimen/_250sdp</dimen>
+
+    <dimen name="button_text_size">@dimen/_18ssp</dimen>
+
+    <dimen name="history_limit_text_size">@dimen/_12ssp</dimen>
+    <dimen name="history_background_box_radius">@dimen/_10sdp</dimen>
+
+    <dimen name="home_page_icon_size">@dimen/_125sdp</dimen>
+    <dimen name="home_page_margin_padding">@dimen/_30sdp</dimen>
+    <dimen name="home_page_button_height_width">@dimen/_50sdp</dimen>
+
+    <dimen name="setting_view_margin">@dimen/_5sdp</dimen>
+    <dimen name="settings_text_size">@dimen/_20ssp</dimen>
+    <dimen name="setting_background_box_radius">@dimen/_10sdp</dimen>
+
+    <dimen name="icon_size">@dimen/_20sdp</dimen>
+    <dimen name="theme_icon_size">@dimen/_30sdp</dimen>
+    <dimen name="unlock_type_text_size">@dimen/_8ssp</dimen>
+    <dimen name="theme_box_margin_padding">@dimen/_10sdp</dimen>
+    <dimen name="widget_min_height_width">@dimen/_20sdp</dimen>
+    <dimen name="theme_box_background_radius">@dimen/_20sdp</dimen>
+
+    <dimen name="empty_view_title_text_size">@dimen/_16ssp</dimen>
+    <dimen name="empty_view_message_text_size">@dimen/_12ssp</dimen>
+    <dimen name="empty_view_title_message_margin">@dimen/_3sdp</dimen>
+    <dimen name="text_margin">16dp</dimen>
+</resources>

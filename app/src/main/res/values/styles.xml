@@ -1,0 +1,124 @@
+<resources>
+
+    <!-- Launcher theme. -->
+    <style name="LauncherTheme" parent="AppTheme">
+        <item name="android:windowBackground">@drawable/page_background</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <!--Splash Theme-->
+    <style name="SplashTheme" parent="Theme.MaterialComponents.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash_background</item>
+
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <!--App Theme-->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <!--Hide ToolBar-->
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <!--Blue Button Theme-->
+    <style name="ButtonTheme">
+        <item name="android:fontFamily">@font/nunito_black</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textColor">@color/button_text_color</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textSize">@dimen/button_text_size</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:marqueeRepeatLimit">marquee_forever</item>
+        <item name="android:ellipsize">marquee</item>
+    </style>
+
+    <!--Edit Text Theme-->
+    <style name="EditTextTheme">
+        <item name="colorControlNormal">@color/player_content_edit_text_theme</item>
+        <item name="colorControlActivated">@color/player_content_edit_text_theme</item>
+        <item name="colorControlHighlight">@color/player_content_edit_text_theme</item>
+    </style>
+
+    <!--Setting Text Theme-->
+    <style name="SettingsTextTheme">
+        <item name="android:fontFamily">@font/nunito_black</item>
+        <item name="android:textColor">@color/setting_content_text_color</item>
+        <item name="android:background">?attr/selectableItemBackground</item>
+        <item name="android:textSize">@dimen/settings_text_size</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:marqueeRepeatLimit">marquee_forever</item>
+        <item name="android:ellipsize">marquee</item>
+    </style>
+
+    <!--Toolbar Title Theme-->
+    <style name="ToolbarTitleTheme">
+        <item name="android:layout_centerInParent">true</item>
+        <item name="android:fontFamily">@font/nunito_black</item>
+        <item name="android:textColor">@color/toolbar_title_color</item>
+        <item name="android:textSize">@dimen/toolbar_title_text_size</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:marqueeRepeatLimit">marquee_forever</item>
+        <item name="android:ellipsize">marquee</item>
+    </style>
+
+    <!--Dialog Title Style-->
+    <style name="DialogTitleStyle">
+        <item name="android:fontFamily">@font/nunito_black</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">@dimen/popup_title_text_size</item>
+        <item name="android:textColor">@color/popup_title_text_color</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:marqueeRepeatLimit">marquee_forever</item>
+        <item name="android:ellipsize">marquee</item>
+    </style>
+
+    <!--Dialog Message Style-->
+    <style name="DialogMessageStyle">
+        <item name="android:fontFamily">@font/nunito_black</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">@dimen/popup_message_text_size</item>
+        <item name="android:textColor">@color/popup_message_text_color</item>
+    </style>
+
+    <!--Switch Theme-->
+    <style name="SwitchTheme" parent="Theme.AppCompat.Light">
+        <!-- active thumb & track color (30% transparency) -->
+        <item name="colorControlActivated">@color/switch_active_color</item>
+        <!-- inactive thumb color -->
+        <item name="colorSwitchThumbNormal">@color/switch_normal_thumb_color</item>
+        <!-- inactive track color (30% transparency) -->
+        <item name="android:colorForeground">@color/switch_inactive_color</item>
+    </style>
+
+    <!--Player Name Style-->
+    <style name="PlayerNameStyle">
+        <item name="android:gravity">center</item>
+        <item name="android:fontFamily">@font/nunito_black</item>
+        <item name="android:textColor">@color/player_name_text_color</item>
+        <item name="android:textSize">@dimen/player_name_text_size</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:marqueeRepeatLimit">marquee_forever</item>
+        <item name="android:ellipsize">marquee</item>
+    </style>
+
+    <!--Player Score Style-->
+    <style name="PlayerScoreStyle">
+        <item name="android:gravity">center</item>
+        <item name="android:fontFamily">@font/nunito_black</item>
+        <item name="android:textColor">@color/player_score_text_color</item>
+        <item name="android:textSize">@dimen/player_score_text_size</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+</resources>

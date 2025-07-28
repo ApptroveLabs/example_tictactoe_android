@@ -1,0 +1,209 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.google.firebase.crashlytics'
+apply plugin: 'com.google.firebase.firebase-perf'
+
+
+android {
+    compileSdkVersion rootProject.compileSdkVersion
+
+    defaultConfig {
+        applicationId "com.cloudstuff.tictactoe"
+        minSdkVersion appMinSdkVersion
+        targetSdkVersion appTargetSdkVersion
+        versionCode appVersionCode
+        versionName appVersionName
+        namespace 'com.cloudstuff.tictactoe'
+
+        vectorDrawables.useSupportLibrary = true
+
+        //this will set apk name with version code and version name
+        setProperty("archivesBaseName", "TicTacToe_v${project.appVersionCode}-${project.appVersionName}_d${getDate()}")
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = ["room.schemaLocation": "$projectDir/schemas".toString()]
+            }
+        }
+    }
+
+    tasks.withType(JavaCompile).configureEach {
+        options.fork = true
+        options.forkOptions.jvmArgs += [
+                '--add-exports=jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED',
+                '--add-exports=jdk.compiler/com.sun.tools.javac.code=ALL-UNNAMED',
+                '--add-exports=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED']
+    }
+
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/license.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/notice.txt'
+        exclude 'META-INF/ASL2.0'
+    }
+
+    allprojects {
+        repositories {
+            jcenter()
+            flatDir {
+                dirs 'libs'
+            }
+        }
+
+        dexOptions {
+            javaMaxHeapSize "4g"
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    bundle {
+        language {
+            enableSplit = false
+        }
+        density {
+            enableSplit = true
+        }
+        abi {
+            enableSplit = true
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources true
+            debuggable false
+
+            firebaseCrashlytics{
+                mappingFileUploadEnabled true
+            }
+            FirebasePerformance {
+                instrumentationEnabled true
+            }
+
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.debug
+        }
+
+        lintOptions {
+            checkReleaseBuilds false
+        }
+
+        debug {
+            minifyEnabled false
+            shrinkResources false
+            debuggable true
+
+            firebaseCrashlytics{
+                mappingFileUploadEnabled false
+            }
+            FirebasePerformance {
+                instrumentationEnabled false
+            }
+
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+static def getDate() {
+    new Date().format('dd-MM-yyyy')
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+
+    //region #AndroidX
+    implementation "androidx.appcompat:appcompat:${appcompat}"
+    implementation "androidx.legacy:legacy-support-v4:${supportV4}"
+    implementation "com.google.android.material:material:${material}"
+    implementation 'com.google.android.play:review:2.0.1'
+    implementation 'com.google.android.play:app-update:2.1.0'
+    //endregion
+
+    //region #Butterknife
+    implementation "com.jakewharton:butterknife:${butterknife}"
+    annotationProcessor "com.jakewharton:butterknife-compiler:${butterknife}"
+    //endregion
+
+    //region Dagger
+    def daggerVer = 2.54 // or latest version
+
+    implementation "com.google.dagger:dagger:$daggerVer"
+    implementation "com.google.dagger:dagger-android-support:$daggerVer"
+    annotationProcessor "com.google.dagger:dagger-android-processor:$daggerVer"
+    annotationProcessor "com.google.dagger:dagger-compiler:$daggerVer"
+
+
+
+    //endregion
+
+    //region #SDP/SSP
+    implementation "com.intuit.sdp:sdp-android:${sdp}"
+    implementation "com.intuit.ssp:ssp-android:${ssp}"
+    //endregion
+
+    //region #Firebase
+    implementation platform('com.google.firebase:firebase-bom:32.1.0')
+//    implementation 'com.google.firebase:firebase-analytics'
+    implementation 'com.google.firebase:firebase-crashlytics'
+    implementation 'com.google.firebase:firebase-perf'
+//    implementation 'com.google.firebase:firebase-messaging'
+    implementation 'com.google.firebase:firebase-database'
+    implementation 'com.google.firebase:firebase-ads:22.5.0'
+//    implementation 'com.google.firebase:firebase-config'
+    implementation 'com.google.firebase:firebase-messaging:20.1.7'
+    implementation 'com.google.firebase:firebase-config:19.1.4'
+    implementation 'com.google.firebase:firebase-analytics:17.4.1'
+    //endregion
+
+    //google tag manager
+    implementation 'com.google.android.gms:play-services-tagmanager:18.0.4'
+
+    //region #Google Services
+    implementation "com.google.android.gms:play-services-auth:${auth}"
+    implementation "com.google.android.gms:play-services-games:${games}"
+    //endregion
+
+    //timber
+    implementation "com.jakewharton.timber:timber:${timber}"
+
+    //otto event bus
+    implementation "com.squareup:otto:${eventBus}"
+
+    //gson
+    implementation "com.google.code.gson:gson:${gson}"
+
+    //InApp Billing
+    implementation "com.android.billingclient:billing:${inAppBilling}"
+
+    //Room Database
+    implementation "androidx.room:room-runtime:${room}"
+    annotationProcessor "androidx.room:room-compiler:${room}"
+
+    implementation "android.arch.lifecycle:extensions:${archLifecycleVersion}"
+
+    implementation 'com.trackier:android-sdk:1.6.60'
+
+    implementation 'com.android.installreferrer:installreferrer:2.2'
+
+
+    implementation 'com.google.android.gms:play-services-ads:23.6.0'
+
+    // FB Meta Sdk
+    implementation 'com.facebook.android:facebook-android-sdk:16.0.0'
+
+
+
+}
+
+//YtYd7UnHBpqdUJ45XGXX2ft0su3yi6
+

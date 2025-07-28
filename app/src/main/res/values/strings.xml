@@ -1,0 +1,113 @@
+<resources>
+
+    <string name="app_name">Tic Tac Toe</string>
+
+    <string name="FbAppId">940420857688811</string>
+    <string name="facebook_client_token">4e5ebf1c40703f2f73a0b225234ba12f</string>
+
+    <string name="action_ai">AI</string>
+    <string name="action_friends">Friends</string>
+    <string name="action_online">Online</string>
+
+    <string name="action_easy">Easy</string>
+    <string name="action_medium">Medium</string>
+    <string name="action_hard">Hard</string>
+    <string name="action_expert">Expert</string>
+
+    <string name="title_players">Players</string>
+    <string name="title_player_one">Player 1</string>
+    <string name="title_player_two">Player 2</string>
+    <string name="title_player_one_select_side">Player 1 (Select Your Side)</string>
+    <string name="action_continue">Continue</string>
+    <string name="error_enter_player_one_name">Please enter Player 1 name.</string>
+    <string name="error_enter_player_two_name">Please enter Player 2 name.</string>
+    <string name="error_enter_different_player_one_two_name">Player 1 and Player 2 name must not be same.</string>
+    <string name="error_player_one_select_your_side">Player 1, Please select your side.</string>
+
+    <string name="title_quit_game">Quit Game</string>
+    <string name="message_quit_game">Are you sure you want to quit this game?</string>
+    <string name="action_cancel">Cancel</string>
+    <string name="action_quit">Quit</string>
+
+    <string name="message_root_device_supported">%s game is not supported on a rooted device.</string>
+    <string name="message_install_google_play_service">Install/Update Google Play Service application to play this game.</string>
+    <string name="error_video_not_available">Video is loading! Please try again after few seconds.</string>
+    <string name="error_internet_connection">Please connect to internet!</string>
+    <string name="error_sign_in_play_games">Error in sign into play service game. Please try again after sometime.</string>
+    <string name="error_status_code_play_game">Error: Status Code: %d</string>
+    <string name="action_ok">OK</string>
+
+    <string name="title_settings">Settings</string>
+    <string name="audio">Audio</string>
+    <string name="vibration">Vibration</string>
+    <string name="notification">Notification</string>
+    <string name="message_share_app">Hey, I have found an awesome Game.\nPlay with AI or friends.\n %s</string>
+    <string name="feedback">Feedback</string>
+    <string name="app_feedback">App Feedback</string>
+    <string name="rate">Rate</string>
+    <string name="share">Share</string>
+    <string name="terms_conditions">Terms Conditions</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="remove_ads">Remove Ads</string>
+    <string name="more_apps">More Apps</string>
+
+    <string name="title_history">History</string>
+    <string name="title_no_data">No data found!</string>
+    <string name="message_no_history">History records are not available!</string>
+    <string name="message_history_limit">Shows the records of last %d games.</string>
+
+    <string name="message_remove_ads_purchase_success">Thank you for purchasing Remove Ads.</string>
+    <string name="message_triangle_theme_purchase_success">Thank you for purchasing Triangle Theme.</string>
+    <string name="message_diamond_theme_purchase_success">Thank you for purchasing Diamond Theme.</string>
+    <string name="message_star_theme_purchase_success">Thank you for purchasing Star Theme.</string>
+    <string name="message_heart_theme_purchase_success">Thank you for purchasing Heart Theme.</string>
+
+    <string name="action_play_again">Play Again</string>
+    <string name="action_home">Home</string>
+    <string name="vs">VS</string>
+    <string name="message_draw">DRAW!</string>
+    <string name="message_player_win">%s WIN!</string>
+    <string name="draw_count">Draw: %d</string>
+    <string name="title_how_to_play">How to Play?</string>
+    <string name="message_how_to_play">The player who succeeded in placing three respective marks in a horizontal, vertical, or diagonal row wins the game.</string>
+
+    <string name="message_theme_locked">Your %s theme has been locked now. Watch video advertise again to unlock it.</string>
+    <string name="error_in_app_user_cancel">Either you cancelled the request or In-App purchase reported a transaction error.</string>
+    <string name="action_watch">Watch</string>
+    <string name="title_advertise">Advertise</string>
+    <string name="message_unlock_theme_advertise_days">Watch video advertise to unlock %s theme for %d days.</string>
+    <string name="message_unlock_theme_advertise">Watch video advertise to unlock %s theme.</string>
+    <string name="title_purchase">Purchase</string>
+    <string name="title_purchase_theme">Purchase Theme</string>
+    <string name="message_unlock_theme_purchase">Purchase this pack to unlock %s theme.</string>
+
+    <!--Notification-->
+    <string name="notification_channel_default">Default</string>
+    <string name="notification_channel_tictactoe">TicTacToe</string>
+
+    <!--Shortcut-->
+    <string name="static_shortcut_long_play_with_ai_label">Play With AI</string>
+    <string name="static_shortcut_short_play_with_ai_label">Play With AI</string>
+    <string name="static_shortcut_play_with_ai_disabled_message">Play With AI shortcut disabled</string>
+    <string name="static_shortcut_long_play_with_friends_label">Play With Friend</string>
+    <string name="static_shortcut_short_play_with_friends_label">Play With Friend</string>
+    <string name="static_shortcut_play_with_friend_disabled_message">Play With Friend shortcut disabled</string>
+
+    <!--Themes-->
+    <string name="title_themes">Themes</string>
+    <string name="title_classic_theme">Classic</string>
+    <string name="title_crackers_theme">Crackers</string>
+    <string name="title_lights_theme">Lights</string>
+    <string name="title_sweets_theme">Sweets</string>
+    <string name="title_rangoli_theme">Rangoli</string>
+    <string name="title_triangle_theme">Triangle</string>
+    <string name="title_diamond_theme">Diamond</string>
+    <string name="title_star_theme">Star</string>
+    <string name="title_plus_theme">Plus</string>
+    <string name="title_heart_theme">Heart</string>
+    <string name="title_square_theme">Square</string>
+    <string name="title_hexagon_theme">Hexagon</string>
+    <string name="title_polygon_theme">Polygon</string>
+    <string name="title_octagon_theme">Octagon</string>
+    <string name="default_notification_channel_id">TicTacToe</string>
+</resources>

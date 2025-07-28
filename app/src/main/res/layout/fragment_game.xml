@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:background="@drawable/page_background"
+    android:orientation="vertical">
+
+    <!--Toolbar-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/toolbar_height_game">
+
+        <!--Back-->
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_back"
+            android:layout_width="?attr/actionBarSize"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_centerVertical="true"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:padding="@dimen/default_icon_with_padding"
+            android:src="@drawable/ic_back" />
+
+        <!--Title-->
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/ic_tictactoe" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/default_layout_margin_padding"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!--Player One Box-->
+            <LinearLayout
+                android:id="@+id/ll_player_one_box"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_player_one_name"
+                    style="@style/PlayerNameStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="Player 1" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_player_one_score"
+                    style="@style/PlayerScoreStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="0" />
+            </LinearLayout>
+
+            <!--Player Two Box-->
+            <LinearLayout
+                android:id="@+id/ll_player_two_box"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/default_layout_margin_padding"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_player_two_name"
+                    style="@style/PlayerNameStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="Player 2" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_player_two_score"
+                    style="@style/PlayerScoreStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="0" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/default_layout_margin_padding">
+
+            <LinearLayout
+                android:layout_width="@dimen/board_height_width"
+                android:layout_height="@dimen/board_height_width"
+                android:layout_gravity="center"
+                android:orientation="vertical">
+
+                <!--Row One-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <!--0-0-->
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/iv_zero_zero"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:padding="@dimen/game_board_box_padding" />
+
+                    <View
+                        android:layout_width="@dimen/board_line_stroke"
+                        android:layout_height="match_parent"
+                        android:background="@color/game_board_horizontal_line_color" />
+
+                    <!--0-1-->
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/iv_zero_one"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:padding="@dimen/game_board_box_padding" />
+
+                    <View
+                        android:layout_width="@dimen/board_line_stroke"
+                        android:layout_height="match_parent"
+                        android:background="@color/game_board_horizontal_line_color" />
+
+                    <!--0-2-->
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/iv_zero_two"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:padding="@dimen/game_board_box_padding" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/board_line_stroke"
+                    android:background="@color/game_board_vertical_line_color" />
+
+                <!--Row Two-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <!--1-0-->
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/iv_one_zero"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:padding="@dimen/game_board_box_padding" />
+
+                    <View
+                        android:layout_width="@dimen/board_line_stroke"
+                        android:layout_height="match_parent"
+                        android:background="@color/game_board_horizontal_line_color" />
+
+                    <!--1-1-->
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/iv_one_one"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:padding="@dimen/game_board_box_padding" />
+
+                    <View
+                        android:layout_width="@dimen/board_line_stroke"
+                        android:layout_height="match_parent"
+                        android:background="@color/game_board_horizontal_line_color" />
+
+                    <!--1-2-->
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/iv_one_two"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:padding="@dimen/game_board_box_padding" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/board_line_stroke"
+                    android:background="@color/game_board_vertical_line_color" />
+
+                <!--Row Three-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <!--2-0-->
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/iv_two_zero"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:padding="@dimen/game_board_box_padding" />
+
+                    <View
+                        android:layout_width="@dimen/board_line_stroke"
+                        android:layout_height="match_parent"
+                        android:background="@color/game_board_horizontal_line_color" />
+
+                    <!--2-1-->
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/iv_two_one"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:padding="@dimen/game_board_box_padding" />
+
+                    <View
+                        android:layout_width="@dimen/board_line_stroke"
+                        android:layout_height="match_parent"
+                        android:background="@color/game_board_horizontal_line_color" />
+
+                    <!--2-2-->
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/iv_two_two"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:padding="@dimen/game_board_box_padding" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!--Win Scenario Vertical-->
+            <LinearLayout
+                android:layout_width="@dimen/board_height_width"
+                android:layout_height="@dimen/board_height_width"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+
+                <!--Win Scenario Vertical Index 0-->
+                <View
+                    android:id="@+id/view_win_line_zero"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/board_line_stroke"
+                    android:layout_marginStart="@dimen/default_layout_margin_padding"
+                    android:layout_marginEnd="@dimen/default_layout_margin_padding"
+                    android:background="@color/win_line_color"
+                    android:visibility="invisible" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="2" />
+
+                <!--Win Scenario Vertical Index 1-->
+                <View
+                    android:id="@+id/view_win_line_one"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/board_line_stroke"
+                    android:layout_marginStart="@dimen/default_layout_margin_padding"
+                    android:layout_marginEnd="@dimen/default_layout_margin_padding"
+                    android:background="@color/win_line_color"
+                    android:visibility="invisible" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="2" />
+
+                <!--Win Scenario Vertical Index 2-->
+                <View
+                    android:id="@+id/view_win_line_two"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/board_line_stroke"
+                    android:layout_marginStart="@dimen/default_layout_margin_padding"
+                    android:layout_marginEnd="@dimen/default_layout_margin_padding"
+                    android:background="@color/win_line_color"
+                    android:visibility="invisible" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+            </LinearLayout>
+
+            <!--Win Scenario Horizontal-->
+            <LinearLayout
+                android:layout_width="@dimen/board_height_width"
+                android:layout_height="@dimen/board_height_width"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1" />
+
+                <!--Win Scenario Horizontal Index 3-->
+                <View
+                    android:id="@+id/view_win_line_three"
+                    android:layout_width="@dimen/board_line_stroke"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/default_layout_margin_padding"
+                    android:layout_marginBottom="@dimen/default_layout_margin_padding"
+                    android:background="@color/win_line_color"
+                    android:visibility="invisible" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="2" />
+
+                <!--Win Scenario Horizontal Index 4-->
+                <View
+                    android:id="@+id/view_win_line_four"
+                    android:layout_width="@dimen/board_line_stroke"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/default_layout_margin_padding"
+                    android:layout_marginBottom="@dimen/default_layout_margin_padding"
+                    android:background="@color/win_line_color"
+                    android:visibility="invisible" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="2" />
+
+                <!--Win Scenario Horizontal Index 5-->
+                <View
+                    android:id="@+id/view_win_line_five"
+                    android:layout_width="@dimen/board_line_stroke"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/default_layout_margin_padding"
+                    android:layout_marginBottom="@dimen/default_layout_margin_padding"
+                    android:background="@color/win_line_color"
+                    android:visibility="invisible" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1" />
+            </LinearLayout>
+
+            <!--Win Scenario Cross Index 6-->
+            <View
+                android:id="@+id/view_win_line_six"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/board_line_stroke"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/_minus13sdp"
+                android:layout_marginEnd="@dimen/_minus13sdp"
+                android:background="@color/win_line_color"
+                android:rotation="45"
+                android:visibility="invisible" />
+
+            <!--Win Scenario Cross Index 7-->
+            <View
+                android:id="@+id/view_win_line_seven"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/board_line_stroke"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/_minus13sdp"
+                android:layout_marginEnd="@dimen/_minus13sdp"
+                android:background="@color/win_line_color"
+                android:rotation="-45"
+                android:visibility="invisible" />
+        </FrameLayout>
+    </LinearLayout>
+</LinearLayout>

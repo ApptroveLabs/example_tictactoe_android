@@ -1,0 +1,5 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <corners android:radius="@dimen/history_background_box_radius" />
+    <solid android:color="@color/history_box_background_color" />
+</shape>

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:background="@drawable/page_background"
+    android:orientation="vertical">
+
+    <!--Toolbar-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/toolbar_height">
+
+        <!--Back-->
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_back"
+            android:layout_width="?attr/actionBarSize"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_centerVertical="true"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:padding="@dimen/default_icon_with_padding"
+            android:src="@drawable/ic_back" />
+
+        <!--Title-->
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_title"
+            style="@style/ToolbarTitleTheme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/title_players" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never"
+        android:paddingStart="@dimen/default_layout_margin_padding"
+        android:paddingEnd="@dimen/default_layout_margin_padding"
+        android:paddingBottom="@dimen/default_layout_margin_padding">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!--Player One-->
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_player_one_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nunito_black"
+                android:text="@string/title_player_one"
+                android:textColor="@color/player_title_text_color"
+                android:textSize="@dimen/player_title_text_size" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_player_one"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nunito_black"
+                android:maxLength="@integer/player_content_max_length"
+                android:textColor="@color/player_content_text_color"
+                android:textSize="@dimen/player_content_text_size"
+                android:theme="@style/EditTextTheme"
+                tools:text="Player1" />
+
+            <!--Player Two-->
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_player_two_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/default_layout_margin_padding"
+                android:fontFamily="@font/nunito_black"
+                android:text="@string/title_player_two"
+                android:textColor="@color/player_title_text_color"
+                android:textSize="@dimen/player_title_text_size" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_player_two"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nunito_black"
+                android:maxLength="@integer/player_content_max_length"
+                android:textColor="@color/player_content_text_color"
+                android:textSize="@dimen/player_content_text_size"
+                android:theme="@style/EditTextTheme"
+                tools:text="Player2" />
+
+            <!--Player One Side Selection-->
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_select_side"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/default_layout_margin_padding"
+                android:ellipsize="marquee"
+                android:fontFamily="@font/nunito_black"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:singleLine="true"
+                android:text="@string/title_player_one_select_side"
+                android:textColor="@color/player_title_text_color"
+                android:textSize="@dimen/player_title_text_size" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/default_layout_margin_padding"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/rb_circle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/theme_player_icon_size"
+                    android:button="@drawable/custom_radio_button"
+                    android:drawableEnd="@drawable/theme_circle"
+                    android:drawablePadding="@dimen/_5sdp"
+                    android:gravity="center" />
+
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/rb_cross"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/theme_player_icon_size"
+                    android:layout_marginStart="@dimen/default_layout_margin_padding"
+                    android:button="@drawable/custom_radio_button"
+                    android:drawableEnd="@drawable/theme_classic_cross"
+                    android:drawablePadding="@dimen/_5sdp"
+                    android:gravity="center" />
+            </RadioGroup>
+
+            <!--Continue-->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_continue"
+                style="@style/ButtonTheme"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/default_layout_margin_padding"
+                android:background="@drawable/selector_small_yellow_button"
+                android:text="@string/action_continue" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

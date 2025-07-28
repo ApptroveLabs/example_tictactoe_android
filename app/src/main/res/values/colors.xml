@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">@color/yellow</color>
+
+    <color name="yellow">#E99F07</color>
+    <color name="dark_blue">#000036</color>
+    <color name="purple">#4E004F</color>
+    <color name="dark_sky_blue">#0f5677</color>
+    <color name="light_sky_blue">#55C0F3</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="light_purple">#4C306B</color>
+    <color name="sky_blue">#40DFF2</color>
+    <color name="red">#F84A4A</color>
+    <color name="green">#038902</color>
+    <color name="off_white">#AAAAAA</color>
+
+    <color name="page_background_start_color">@color/dark_blue</color>
+    <color name="page_background_end_color">@color/purple</color>
+
+    <color name="popup_background_start_color">@color/light_sky_blue</color>
+    <color name="popup_background_end_color">@color/dark_sky_blue</color>
+    <color name="popup_title_text_color">@color/white</color>
+    <color name="popup_message_text_color">@color/white</color>
+    <color name="popup_border_color">@color/yellow</color>
+
+    <color name="button_text_color">@color/white</color>
+
+    <color name="game_board_horizontal_line_color">@color/sky_blue</color>
+    <color name="game_board_vertical_line_color">@color/yellow</color>
+    <color name="win_line_color">@color/red</color>
+
+    <color name="player_name_text_color">@color/yellow</color>
+    <color name="player_score_text_color">@color/yellow</color>
+    <color name="player_title_text_color">@color/yellow</color>
+    <color name="player_content_text_color">@color/white</color>
+    <color name="player_content_edit_text_theme">@color/white</color>
+
+    <color name="history_limit_text_color">@color/white</color>
+    <color name="history_vs_text_color">@color/white</color>
+    <color name="history_time_ago_text_color">@color/white</color>
+    <color name="history_box_background_color">@color/light_purple</color>
+    <color name="game_draw_text_color">@color/yellow</color>
+    <color name="game_lose_text_color">@color/red</color>
+    <color name="game_win_text_color">@color/green</color>
+
+    <color name="theme_name_text_color">@color/white</color>
+    <color name="theme_unlock_type_text_color">@color/yellow</color>
+    <color name="theme_selected_name_text_color">@color/yellow</color>
+    <color name="theme_box_background_color">@color/light_purple</color>
+
+    <color name="setting_content_text_color">@color/white</color>
+    <color name="switch_active_color">@color/yellow</color>
+    <color name="switch_normal_thumb_color">@color/white</color>
+    <color name="switch_inactive_color">@color/off_white</color>
+    <color name="setting_view_color">@color/white</color>
+    <color name="setting_box_background_color">@color/light_purple</color>
+
+    <color name="empty_view_title_color">@color/yellow</color>
+    <color name="empty_view_message_color">@color/white</color>
+
+    <color name="toolbar_title_color">@color/yellow</color>
+
+</resources>

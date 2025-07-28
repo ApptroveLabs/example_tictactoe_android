@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/default_layout_margin_padding"
+    android:animateLayoutChanges="true"
+    android:background="@drawable/history_box_background"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="@dimen/default_icon_with_padding">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!--Player One-->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/default_icon_with_padding"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_player_one_name"
+                style="@style/PlayerNameStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="Player One" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_player_one_score"
+                style="@style/PlayerScoreStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="0" />
+        </LinearLayout>
+
+        <com.google.android.material.textview.MaterialTextView
+            style="@style/PlayerNameStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/vs"
+            android:textColor="@color/history_vs_text_color" />
+
+        <!--Player Two-->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/default_icon_with_padding"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_player_two_name"
+                style="@style/PlayerNameStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="Player Two" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_player_two_score"
+                style="@style/PlayerScoreStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="0" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/default_icon_with_padding">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_draw"
+            style="@style/PlayerNameStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            tools:text="Draw: 0" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_time"
+            style="@style/PlayerNameStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/default_icon_with_padding"
+            android:drawableStart="@drawable/ic_timer"
+            android:drawablePadding="@dimen/default_icon_with_padding"
+            android:textColor="@color/history_time_ago_text_color"
+            tools:text="100 weeks ago" />
+    </RelativeLayout>
+</LinearLayout>

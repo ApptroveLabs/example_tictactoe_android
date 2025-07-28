@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="admob_app_id" translatable="false">ca-app-pub-7200616231950763~4846797101</string>
+    <string name="admob_banner_ad_id" translatable="false">ca-app-pub-7200616231950763/6898245378</string>
+    <string name="admob_interstitial_ad_id" translatable="false">ca-app-pub-7200616231950763/7636611971</string>
+    <string name="admob_reward_video_ad_id" translatable="false">ca-app-pub-7200616231950763/6131958614</string>
+</resources>
