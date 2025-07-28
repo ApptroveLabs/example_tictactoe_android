@@ -2,7 +2,7 @@
 
 This document provides a comprehensive overview of the Trackier SDK integration in the TicTacToe Android application, including all implemented features, event tracking, deep linking, and dynamic link functionality.
 
-##  Table of Contents
+## 📋 Table of Contents
 
 1. [SDK Initialization](#sdk-initialization)
 2. [Event Tracking](#event-tracking)
@@ -12,7 +12,8 @@ This document provides a comprehensive overview of the Trackier SDK integration 
 6. [File Locations](#file-locations)
 7. [Configuration](#configuration)
 8. [Logging and Debugging](#logging-and-debugging)
-##  SDK Initialization
+
+## 🚀 SDK Initialization
 
 ### Location: `app/src/main/java/com/cloudstuff/tictactoe/TicTacToe.java`
 
@@ -30,11 +31,20 @@ TrackierSDK.initialize(sdkConfig);
 - Deep link listener setup
 - SDK initialization with custom configuration
 
-##  Event Tracking
+## 📊 Event Tracking
 
+### 1. App Launch Event
+**Location:** `app/src/main/java/com/cloudstuff/tictactoe/activity/SplashActivity.java`
 
+```java
+TrackierEvent event = new TrackierEvent("sEMWSCTXeu");
+event.param1 = "App Opened";
+TrackierSDK.trackEvent(event);
+```
 
-### 1. Game Result Events
+**Trigger:** When the app is launched (SplashActivity onCreate)
+
+### 2. Game Result Events
 **Location:** `app/src/main/java/com/cloudstuff/tictactoe/fragment/GameFragment.java`
 
 #### Player One Win Event
@@ -53,7 +63,7 @@ TrackierSDK.trackEvent(event);
 
 **Trigger:** When a player wins the game
 
-### 2. Invite Friends Event
+### 3. Invite Friends Event
 **Location:** `app/src/main/java/com/cloudstuff/tictactoe/fragment/SettingsFragment.java`
 
 ```java
@@ -65,7 +75,7 @@ TrackierSDK.trackEvent(event);
 
 **Trigger:** When user clicks "Invite Friends" button in settings
 
-### 3. Uninstall Tracking
+### 4. Uninstall Tracking
 **Location:** `app/src/main/java/com/cloudstuff/tictactoe/activity/MainActivity.java`
 
 ```java
@@ -78,7 +88,7 @@ Log.d("TAG", "onCreate: "+TrackierSDK.getTrackierId());
 **Trigger:** When the app is launched (MainActivity onCreate)
 **Purpose:** Tracks uninstall events by setting Trackier ID as Firebase Analytics user property
 
-##  Deep Link Handling
+## 🔗 Deep Link Handling
 
 ### Deep Link Listener
 **Location:** `app/src/main/java/com/cloudstuff/tictactoe/TicTacToe.java`
@@ -128,7 +138,7 @@ private Map<String,String> getDeepLinkParams(Uri uri) {
 }
 ```
 
-##  Dynamic Link Creation
+## 🔄 Dynamic Link Creation
 
 ### Location: `app/src/main/java/com/cloudstuff/tictactoe/fragment/SettingsFragment.java`
 
@@ -204,7 +214,7 @@ private void shareDynamicLink(String dynamicLinkUrl) {
 }
 ```
 
-##  Deferred Deep Link Resolution for instant link
+## 🔍 Deferred Deep Link Resolution for Instant Link
 
 ### Location: `app/src/main/java/com/cloudstuff/tictactoe/activity/MainActivity.java`
 
@@ -222,7 +232,7 @@ TrackierSDK.resolveDeeplinkUrl("https://trackier58.u9ilnk.me/d/NKmWH9E7b1",
 );
 ```
 
-##  File Locations
+## 📁 File Locations
 
 ### Core SDK Files:
 - **Application Class:** `app/src/main/java/com/cloudstuff/tictactoe/TicTacToe.java`
@@ -252,7 +262,7 @@ implementation 'com.trackier:android-sdk:1.6.73'
 private static final String TR_DEV_KEY = "<PLACE_SDK_OR_APP_KEY_HERE>";
 ```
 
-##  Logging and Debugging
+## 📝 Logging and Debugging
 
 ### Log Tags Used:
 - `"DeepLink"` - Deep link data logging
@@ -267,24 +277,34 @@ private static final String TR_DEV_KEY = "<PLACE_SDK_OR_APP_KEY_HERE>";
 3. **Dynamic Link Created:** Successfully created dynamic links
 4. **Event Tracking:** All tracked events with parameters
 
-##  Event Summary
+## 🎯 Event Summary
 
 | Event ID | Event Name | Location | Trigger |
 |----------|------------|----------|---------|
+| `sEMWSCTXeu` | App Launch | SplashActivity | App opened |
 | `ErkEjPi4X1` | Game Win | GameFragment | Player wins game |
 | `TrackierEvent.INVITE` | Invite Friends | SettingsFragment | Invite button clicked |
 | `TrackierSDK.getTrackierId()` | Uninstall Tracking | MainActivity | App launched (Firebase Analytics) |
 
+## 🔧 Key Features Implemented
 
+1. **✅ SDK Initialization** - Complete setup with deep link listener
+2. **✅ Event Tracking** - Multiple events across different app sections
+3. **✅ Deep Link Handling** - Comprehensive deep link data logging
+4. **✅ Dynamic Link Creation** - Full invite functionality with sharing
+5. **✅ Deferred Deep Link Resolution** - URL resolution with error handling
+6. **✅ Error Handling** - Proper error logging and user feedback
+7. **✅ Logging** - Detailed logging for debugging and monitoring
+8. **✅ Uninstall Tracking** - Firebase Analytics integration for uninstall detection
 
-##  Usage Instructions
+## 🚀 Usage Instructions
 
 1. **Replace SDK Key:** Update `TR_DEV_KEY` in `TicTacToe.java`
 2. **Configure Template ID:** Update template ID in dynamic link creation
 3. **Test Deep Links:** Use the provided test URL for deferred deep link testing
 4. **Monitor Logs:** Use Logcat with filter tags to monitor SDK operations
 
-##  User Flow
+## 📱 User Flow
 
 1. **App Launch** → Trackier event fired + Uninstall tracking setup
 2. **Game Play** → Win events tracked
