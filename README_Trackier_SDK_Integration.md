@@ -76,6 +76,8 @@ TrackierSDK.trackEvent(event);
 **Trigger:** When user clicks "Invite Friends" button in settings
 
 ### 4. Uninstall Tracking
+
+#### A. Firebase Analytics Integration
 **Location:** `app/src/main/java/com/cloudstuff/tictactoe/activity/MainActivity.java`
 
 ```java
@@ -87,6 +89,37 @@ Log.d("TAG", "onCreate: "+TrackierSDK.getTrackierId());
 
 **Trigger:** When the app is launched (MainActivity onCreate)
 **Purpose:** Tracks uninstall events by setting Trackier ID as Firebase Analytics user property
+
+#### B. FCM Token for Uninstall Tracking
+**Location:** `app/src/main/java/com/cloudstuff/tictactoe/fcm/FCMFirebaseMessagingService.java`
+
+```java
+@Override
+public void onNewToken(String token) {
+
+    // Log the FCM token
+    Log.d("FCM", "New FCM token: " + token);
+    
+    // Send the FCM token to TrackierSDK for uninstall tracking
+    TrackierSDK.sendFcmToken(token);
+}
+```
+
+**Trigger:** When FCM token is generated or refreshed
+**Purpose:** Sends FCM token to Trackier SDK for push notification-based uninstall tracking
+
+**Service Configuration:**
+The service is registered in `AndroidManifest.xml`:
+```xml
+<service
+    android:name="com.cloudstuff.tictactoe.fcm.FCMFirebaseMessagingService"
+    android:directBootAware="true"
+    android:exported="false">
+    <intent-filter>
+        <action android:name="com.google.firebase.MESSAGING_EVENT" />
+    </intent-filter>
+</service>
+```
 
 ## 🔗 Deep Link Handling
 
@@ -240,9 +273,11 @@ TrackierSDK.resolveDeeplinkUrl("https://trackier58.u9ilnk.me/d/NKmWH9E7b1",
 - **Splash Activity:** `app/src/main/java/com/cloudstuff/tictactoe/activity/SplashActivity.java`
 - **Game Fragment:** `app/src/main/java/com/cloudstuff/tictactoe/fragment/GameFragment.java`
 - **Settings Fragment:** `app/src/main/java/com/cloudstuff/tictactoe/fragment/SettingsFragment.java`
+- **FCM Service:** `app/src/main/java/com/cloudstuff/tictactoe/fcm/FCMFirebaseMessagingService.java`
 
 ### Configuration Files:
 - **Build Configuration:** `app/build.gradle`
+- **Manifest:** `app/src/main/AndroidManifest.xml`
 - **Proguard Rules:** `app/proguard-rules.pro`
 
 ## ⚙️ Configuration
@@ -270,12 +305,14 @@ private static final String TR_DEV_KEY = "<PLACE_SDK_OR_APP_KEY_HERE>";
 - `"DynamicLinkSuccess"` - Dynamic link creation success
 - `"DynamicLinkError"` - Dynamic link creation errors
 - `"ShareError"` - Share functionality errors
+- `"FCM"` - FCM token generation and updates
 
 ### Key Log Messages:
 1. **Deep Link Received:** Complete deep link data dump
 2. **Resolved Deferred Deep Link:** URL resolution results
 3. **Dynamic Link Created:** Successfully created dynamic links
 4. **Event Tracking:** All tracked events with parameters
+5. **FCM Token:** New and refreshed FCM tokens sent to Trackier SDK
 
 ## 🎯 Event Summary
 
@@ -285,6 +322,7 @@ private static final String TR_DEV_KEY = "<PLACE_SDK_OR_APP_KEY_HERE>";
 | `ErkEjPi4X1` | Game Win | GameFragment | Player wins game |
 | `TrackierEvent.INVITE` | Invite Friends | SettingsFragment | Invite button clicked |
 | `TrackierSDK.getTrackierId()` | Uninstall Tracking | MainActivity | App launched (Firebase Analytics) |
+| `TrackierSDK.sendFcmToken()` | FCM Token for Uninstall | FCMFirebaseMessagingService | FCM token generated/refreshed |
 
 ## 🔧 Key Features Implemented
 
@@ -295,7 +333,10 @@ private static final String TR_DEV_KEY = "<PLACE_SDK_OR_APP_KEY_HERE>";
 5. **✅ Deferred Deep Link Resolution** - URL resolution with error handling
 6. **✅ Error Handling** - Proper error logging and user feedback
 7. **✅ Logging** - Detailed logging for debugging and monitoring
-8. **✅ Uninstall Tracking** - Firebase Analytics integration for uninstall detection
+8. **✅ Uninstall Tracking** - Dual approach:
+   - Firebase Analytics integration with Trackier ID
+   - FCM token sent to Trackier SDK for push notification-based uninstall tracking
+9. **✅ Push Notification Support** - FCM service integrated with Trackier SDK
 
 ## 🚀 Usage Instructions
 
@@ -306,11 +347,27 @@ private static final String TR_DEV_KEY = "<PLACE_SDK_OR_APP_KEY_HERE>";
 
 ## 📱 User Flow
 
-1. **App Launch** → Trackier event fired + Uninstall tracking setup
-2. **Game Play** → Win events tracked
-3. **Invite Friends** → Dynamic link created and shared
-4. **Deep Link Received** → Complete data logged
-5. **Deferred Deep Link** → URL resolved and logged
-6. **Uninstall Detection** → Trackier ID linked to Firebase Analytics for uninstall tracking
+1. **App Launch** → Trackier event fired + Uninstall tracking setup (Firebase Analytics + FCM)
+2. **FCM Token Generation** → Token sent to Trackier SDK for uninstall tracking
+3. **Game Play** → Win events tracked
+4. **Invite Friends** → Dynamic link created and shared
+5. **Deep Link Received** → Complete data logged
+6. **Deferred Deep Link** → URL resolved and logged
+7. **Uninstall Detection** → Dual tracking via Trackier ID (Firebase Analytics) and FCM token
 
-This integration provides comprehensive tracking, deep linking, and dynamic link functionality for the TicTacToe Android application using the Trackier SDK. 
+## 🔔 FCM Configuration
+
+### Firebase Messaging Service
+The `FCMFirebaseMessagingService` provides:
+- **Automatic token refresh handling**
+- **Token sent to Trackier SDK** via `TrackierSDK.sendFcmToken(token)`
+- **Push notification receiving** for game invites and other notifications
+- **Uninstall tracking support** through FCM tokens
+
+### How Uninstall Tracking Works
+1. **On app install/launch**: FCM token is generated and sent to Trackier SDK
+2. **Token refresh**: Whenever FCM token changes, it's automatically sent to Trackier
+3. **Uninstall detection**: Trackier uses this token to detect when the app is uninstalled by attempting to send silent push notifications
+4. **Dual tracking**: Combined with Firebase Analytics user property for comprehensive uninstall tracking
+
+This integration provides comprehensive tracking, deep linking, dynamic link functionality, and uninstall tracking for the TicTacToe Android application using the Trackier SDK. 

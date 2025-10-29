@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Build;
+import android.util.Log;
 
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.TaskStackBuilder;
@@ -23,6 +24,7 @@ import com.cloudstuff.tictactoe.activity.MainActivity;
 import com.cloudstuff.tictactoe.model.GamePlayRequest;
 import com.cloudstuff.tictactoe.utils.Constants;
 import com.cloudstuff.tictactoe.utils.PreferenceUtils;
+import com.trackier.sdk.TrackierSDK;
 
 import java.util.Map;
 
@@ -118,6 +120,13 @@ public class FCMFirebaseMessagingService extends FirebaseMessagingService {
         // Instance ID token to your app server.
         //sendRegistrationToServer(token);
         preferenceUtils.setString(Constants.PreferenceConstant.FCM_TOKEN, token);
+
+        Log.d("FCM", "New FCM token: " + token);
+
+        // Send the FCM token to TrackierSDK
+        TrackierSDK.sendFcmToken(token);
+
+
     }
     //endregion
 

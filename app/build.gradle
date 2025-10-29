@@ -187,7 +187,7 @@ dependencies {
 
     implementation "android.arch.lifecycle:extensions:${archLifecycleVersion}"
 
-    implementation 'com.trackier:android-sdk:1.6.73'
+    implementation 'com.trackier:android-sdk:1.6.77'
 
     implementation 'com.android.installreferrer:installreferrer:2.2'
 
